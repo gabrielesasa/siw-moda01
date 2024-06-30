@@ -1,11 +1,13 @@
 package it.uniroma3.siw.model;
 
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class OffertaLavoro {
@@ -14,11 +16,28 @@ public class OffertaLavoro {
 	private Long id;
 	private String tipologia;
 	private Long stipendio;
+	@ManyToOne
+	private Azienda azienda;
+	@ManyToOne
+	private Azienda aziend2;
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+		public Azienda getAziend2() {
+		return aziend2;
+	}
+	public void setAziend2(Azienda aziend2) {
+		this.aziend2 = aziend2;
+	}
+		public Azienda getAzienda() {
+		return azienda;
+	}
+	public void setAzienda(Azienda azienda) {
+		this.azienda = azienda;
 	}
 	public String getTipologia() {
 		return tipologia;

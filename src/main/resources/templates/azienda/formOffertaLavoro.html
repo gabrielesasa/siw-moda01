@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Nuova Azienda
+	</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	
+	
+	<h1>Aggiungi Offerta di Lavoro</h1>
+	<form th:action="@{/azienda/formOffertaLavoro}" method="POST" >
+	
+  		
+		
+		<div>
+			<label>Tipologia:</label> 
+			<span><input type="text" th:field="${offertaLavoro.tipologia}" /></span>
+		    
+		    </span>
+		</div>
+
+		<div>
+			<label>stipendio:</label> <span><input type="text" th:field="${offertaLavoro.stipendio}" /></span>
+		    
+		    </span>
+		</div>
+
+		
+			<span><button type="submit">Conferma</button></span>
+		</div>
+	</form>
+</body>
+
+</html>

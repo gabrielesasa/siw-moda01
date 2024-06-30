@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Azienda</title>
-<link rel="stylesheet" href="/css/stilePiatto.css" />
-</head>
-<body>
-
-  
-      <h1  th:text="${azienda.nome}">nome azienda</h1>
-      
-      <div  th:text="${azienda.indirizzo}">indirizzo</div>
-      <div  th:text="${azienda.email}">email</div>
-      <div  th:text="${azienda.telefono}">telefono</div>
-      
-  <div th:unless="${azienda}">Non esiste</div>
-</body>
+  <head>
+    <title>Azienda</title>
+   
+  </head>
+  <body>
+    
+    <div th:if="${azienda}">
+    <h1 th:text="${azienda.nome}"> Titolo film</h1>
+       
+        
+    </div>
+    <div th:unless="${azienda}">Non esiste</div>
+  </body>
 </html>

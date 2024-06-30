@@ -22,6 +22,7 @@ public class AuthConfiguration {
   public static final String DEFAULT_ROLE = "DEFAULT";
 	public static final String ADMIN_ROLE = "ADMIN";
 	public static final String AZIENDA_ROLE = "AZIENDA";
+	public static final String STUDENTE_ROLE = "STUDENTE";
 @Autowired
   private DataSource dataSource;
 
@@ -56,7 +57,8 @@ public class AuthConfiguration {
             // solo gli amministratori possono accedere alle pagine admin
             .requestMatchers(HttpMethod.GET, "/azienda/**").hasAnyAuthority(AZIENDA_ROLE)
             .requestMatchers(HttpMethod.POST, "/azienda/**").hasAnyAuthority(AZIENDA_ROLE)
-            
+            .requestMatchers(HttpMethod.GET, "/studente/**").hasAnyAuthority(STUDENTE_ROLE)
+            .requestMatchers(HttpMethod.POST, "/studente/**").hasAnyAuthority(STUDENTE_ROLE)
             // tutti gli utenti autenticati possono accedere alle pagine rimanenti 
             .anyRequest().authenticated()
         // LOGIN: qui definiamo il login

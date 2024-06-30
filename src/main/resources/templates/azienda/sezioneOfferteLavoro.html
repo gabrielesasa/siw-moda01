@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		SiwFood - Homepage
+	</title>
+	<link rel="stylesheet" href="/css/paginaAziende.css" />
+	
+</head>
+
+<body>
+	<header>
+	
+	  <div class="header-links">
+            <a href="paginaAziende">Aziende</a>
+            <a href="formRegistrazione">Registrazione</a>
+            <a href="/login">Login</a>
+        </div>
+	
+	</header>
+	
+	<h1>Offerte di Lavoro</h1>
+	 
+	<div th:if="${offerteLavoro==null || offerteLavoro.isEmpty()}">Non ci sono offerte di lavoro nel sistema</div>
+	
+		<div th:each="offerta : ${offerteLavoro}">
+			<a th:href="@{'/offerta' + '/' + ${offerta.id}}" th:text="${offerta.id} ">Up!
+				(2000)</a>
+		
+		
+			</div>
+		<a href="/azienda/aggiungiOffertaLavoro">Nuova Offerta</a>
+	
+	
+	
+</body>
+
+</html>

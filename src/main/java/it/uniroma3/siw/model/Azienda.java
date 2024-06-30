@@ -1,11 +1,13 @@
 package it.uniroma3.siw.model;
 
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -17,9 +19,15 @@ public class Azienda {
 	private String indirizzo;
 	private Long telefono;
 	private String email;
+	@OneToMany(mappedBy="aziend2")
+	private List<OffertaLavoro> pubblicate;
 	private String immagine;
 	@OneToOne
 	private User user;
+	@OneToMany(mappedBy="azienda")
+	private List<OffertaLavoro> offerte;
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -27,6 +35,18 @@ public class Azienda {
 		this.id = id;
 	}
 	
+	public List<OffertaLavoro> getPubblicate() {
+		return pubblicate;
+	}
+	public void setPubblicate(List<OffertaLavoro> pubblicate) {
+		this.pubblicate = pubblicate;
+	}
+	public List<OffertaLavoro> getOfferte() {
+		return offerte;
+	}
+	public void setOfferte(List<OffertaLavoro> offerte) {
+		this.offerte = offerte;
+	}
 	public User getUser() {
 		return user;
 	}

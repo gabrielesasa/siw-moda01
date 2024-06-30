@@ -15,6 +15,7 @@ public class Credentials {
 	public static final String DEFAULT_ROLE = "DEFAULT";
 	public static final String ADMIN_ROLE = "ADMIN";
 	public static final String AZIENDA_ROLE = "AZIENDA";
+	public static final String STUDENTE_ROLE = "STUDENTE";
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
