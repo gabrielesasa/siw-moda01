@@ -1,0 +1,106 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.header-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.header-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header-links a:hover {
+    background-color: #555;
+}
+
+/* Layout a griglia 2x2 per le quadranti */
+
+    .quadrant {
+    width: 50%;
+    height: 44%; /* Altezza di ciascun quadrante, adattabile */
+    position: relative;
+    overflow: hidden;
+    float: left;
+    background-size: contain; /* L'immagine si adatta al contenitore senza essere tagliata */
+    background-position: center;
+    transition: transform 0.3s ease;
+    box-sizing: border-box; /* Assicura che il padding non modifichi le dimensioni */
+    padding: 10px; /* Aggiungi spazio intorno all'immagine */
+    border: 1px solid #ccc; /* Aggiungi bordo per chiarezza */
+    display: flex; /* Usa Flexbox per centrare il testo */
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+
+/* Immagini di sfondo per i quadranti */
+#quadrant1 {
+    background-image: url('/immagini/azienda.jpg');
+    background-position: 100% 80%; /* Posizione dell'immagine */
+    background-size: 100%; /* Livello di zoom */
+}
+
+#quadrant2 {
+    background-image: url('/immagini/studenti.jpg');
+    background-position: 100% 40%; /* Posizione dell'immagine */
+    background-size: 100%; /* Livello di zoom */
+}
+
+#quadrant3 {
+    background-image: url('/immagini/bacheca.jpg');
+    background-position: 100% 90%; /* Posizione dell'immagine */
+    background-size: 100%; /* Livello di zoom */
+}
+
+#quadrant4 {
+    background-image: url('/immagini/aziende2.jpg');
+    background-position: 100% 80%; /* Posizione dell'immagine */
+    background-size: 100%; /* Livello di zoom */
+}
+
+/* Effetto zoom al passaggio del mouse */
+.quadrant:hover {
+    transform: scale(1.1); /* Zoom del 10% */
+}
+
+/* Stile per il testo al centro dell'immagine */
+.image-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.image-link:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.image-text {
+    font-size: 1.5rem;
+}

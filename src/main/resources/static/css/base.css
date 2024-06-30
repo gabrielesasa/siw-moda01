@@ -1,0 +1,93 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/fronte.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: blue;
+}
+
+header {
+     background-color:white; /* Sfondo nero traslucido */
+            color: white; /* Testo bianco per contrastare il background nero */
+            height: 1.3em; /* Aumenta l'altezza dell'header */
+            margin-bottom: 0.5em;
+            padding: 1.3em; /* Aumenta il padding per un aspetto più grande */
+            text-align: right; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+        }
+
+        .header-links {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 60em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+        .header-links2 {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 34em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+         .header-links3 {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 43em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+        .header-links4 {
+            display: flex;
+            gap: 4em; /* Spazio tra i link */
+            margin-left: 35em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+
+        header a { 
+            text-decoration: none; 
+            color: rgb(0, 0, 0); /* Cambia il colore del testo dei link per adattarsi al nuovo background */
+            font-size: 3em; /* Puoi modificare la dimensione del font se necessario */
+            font-size: 1.2em; /* Modifica la dimensione del font dei link */
+        }
+        .header-links a:hover {
+    color: red;
+}
+   .header-links2 a:hover {
+    color:red;
+}
+
+.main-section {
+	
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente il contenuto */
+    align-items: center; /* Centra verticalmente il contenuto */
+   /* Altezza minima pari all'altezza della finestra meno l'altezza dell'intestazione */
+      
+}
+
+.centered-photo {
+	
+    max-width: 120%; /* Larghezza massima della foto al 100% della larghezza del contenitore */
+    text-align: center; /* Allinea la foto al centro */
+}
+
+.centered-photo img {
+    max-width: 110%; /* Larghezza massima dell'immagine al 100% della larghezza del suo contenitore */
+    height: auto; /* Altezza automatica mantenendo l'aspetto originale */
+    display: block; /* Rende l'immagine un blocco per centrarla correttamente */
+    margin: 0 auto; /* Margine automatico per centrare l'immagine orizzontalmente */
+}
+h1{
+	color:white;
+}
+
+	
+

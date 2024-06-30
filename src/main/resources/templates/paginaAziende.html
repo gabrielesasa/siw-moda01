@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		SiwFood - Homepage
+	</title>
+	<link rel="stylesheet" href="/css/paginaAziende.css" />
+	
+</head>
+
+<body>
+	<header>
+	
+	  <div class="header-links">
+            <a href="paginaAziende">Aziende</a>
+            <a href="formRegistrazione">Registrazione</a>
+            <a href="/login">Login</a>
+        </div>
+	
+	</header>
+	
+	<h1>Aziende</h1>
+	 <div class="container">
+	<div th:if="${aziende==null || aziende.isEmpty()}">Non ci sono aziende nel sistema</div>
+	
+		<div th:each="azienda : ${aziende}">
+			<a th:href="@{'/azienda' + '/' + ${azienda.id}}" th:text="${azienda.nome} ">Up!
+				(2000)</a>
+		<img src="/immagini/Glamour.jpeg" alt="Descrizione della foto">
+		
+			</div>
+		</div>
+	</ul>
+	
+	
+</body>
+
+</html>
