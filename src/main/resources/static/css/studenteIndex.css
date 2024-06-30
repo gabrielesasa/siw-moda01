@@ -1,0 +1,94 @@
+/* Stili di base */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.header-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.header-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header-links a:hover {
+    background-color: #555;
+}
+
+/* Layout a griglia 1x3 per i quadranti */
+main {
+    display: flex;
+    height: calc(100vh - 50px); /* Altezza totale meno l'altezza dell'header */
+}
+
+.quadrant {
+    width: 33.33%;
+    position: relative;
+    overflow: hidden;
+    background-size: cover; /* L'immagine si adatta al contenitore senza essere tagliata */
+    background-position: center;
+    transition: transform 0.3s ease;
+    display: flex; /* Usa Flexbox per centrare il testo */
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Immagini di sfondo per i quadranti */
+#quadrant1 {
+    background-image: url('/immagini/profiloStudente.jpg');
+}
+
+#quadrant2 {
+    background-image: url('/immagini/bacheca.jpg');
+}
+
+#quadrant3 {
+	background-image: url('/immagini/studenti.jpg');
+    
+}
+
+/* Effetto zoom al passaggio del mouse */
+.quadrant:hover {
+    transform: scale(1.1); /* Zoom del 10% */
+}
+
+/* Stile per il testo al centro dell'immagine */
+.image-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.image-link:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.image-text {
+    font-size: 1.5rem;
+}

@@ -73,6 +73,9 @@ public class AuthenticationController {
     	else if(credentials.getRole().equals(Credentials.AZIENDA_ROLE)) {
                 return "azienda/indexAzienda.html";
     	}
+    	else if(credentials.getRole().equals(Credentials.STUDENTE_ROLE)) {
+            return "studente/indexStudente.html";
+	}
         return "/index.html";
     }
 	@GetMapping(value = "/") 

@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Studente {
@@ -16,6 +17,8 @@ public class Studente {
 	private String cognome;
 	private String email;
 	private Integer year;
+	@OneToOne
+	private User user;
 	public Long getId() {
 		return id;
 	}
@@ -23,6 +26,12 @@ public class Studente {
 		this.id = id;
 	}
 	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public Integer getYear() {
 		return year;
 	}
