@@ -2,51 +2,36 @@
 <html>
 
 <head>
-	<title>
-		SiwFood - Homepage
-	</title>
-	<link rel="stylesheet" href="/css/paginaStudenti.css" />
-	
+    <title>SiwFood - Homepage</title>
+    <link rel="stylesheet" href="/css/studenteIndex.css">
 </head>
 
 <body>
-	<header>
-	
-	  <div class="header-links">
+    <header>
+        <div class="header-links">
             <a href="paginaAziende">Aziende</a>
             <a href="formRegistrazione">Registrazione</a>
             <a href="/login">Login</a>
         </div>
-	
-	</header>
-	
-	<h1>Studenti</h1>
-	 <div class="main-container">
-	 <div class="container">
-        <div class="main-section section1">
-            <a th:href="@{'/studente/studente' + '/' + ${s2.id}}" th:text="${s2.nome} ">Up!
-            <img src="/immagini/Glamour.jpeg" alt="Descrizione della foto">
-        </div>
-        <div class="main-section section2">
-           <a th:href="@{'/studente/studente' + '/' + ${s3.id}}" th:text="${s3.nome} ">Up!
-           <img src="/immagini/Glamour.jpeg" alt="Descrizione della foto">
-        </div>
-        <div class="main-section section3">
-       <a th:href="@{'/studente/studente' + '/' + ${s1.id}}" th:text="${s1.nome} ">Up!
-       <img src="/immagini/Glamour.jpeg" alt="Descrizione della foto">
-        </div>
+    </header>
+
+    <h1>Studenti</h1>
+
+    <div class="section" id="section1">
+        <a th:href="@{'/studente/studente' + '/' + ${s2.id}}" th:text="${s2.nome} " class="student-name">Nome 1</a>
     </div>
-</div>
+
+    <div class="section" id="section2">
+        <a th:href="@{'/studente/studente' + '/' + ${s3.id}}" th:text="${s3.nome} " class="student-name">Nome 2</a>
+    </div>
+
+    <div class="section" id="section3">
+        <a th:href="@{'/studente/studente' + '/' + ${s1.id}}" th:text="${s1.nome} " class="student-name">Nome 3</a>
+    </div>
 
     <footer>
-       a
+        Footer
     </footer>
-	
-		
-		
-		
-	
-	
 </body>
 
 </html>

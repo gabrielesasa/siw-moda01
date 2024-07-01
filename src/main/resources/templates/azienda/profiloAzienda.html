@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Azienda</title>
-<link rel="stylesheet" href="/css/stilePiatto.css" />
+    <title>Azienda</title>
+    <link rel="stylesheet" href="/css/pA.css">
 </head>
+
 <body>
-	<header> 
-		<div class="header-links">
+    <header>
+        <div class="header-links">
             <a href="paginaAziende">Modifica</a>
             <a href="/azienda/sezioneOfferteLavoro">Sezione offerte di lavoro</a>
             <a href="/login">Login</a>
         </div>
-	
-	</header>
-  
-      <h1  th:text="${azienda.nome}">nome azienda</h1>
-      
-      <div  th:text="${azienda.indirizzo}">indirizzo</div>
-      <div  th:text="${azienda.email}">email</div>
-      <div  th:text="${azienda.telefono}">telefono</div>
-      
-  <div th:unless="${azienda}">Non esiste</div>
+    </header>
+
+    <main>
+        <h1 th:text="${azienda.nome}">nome azienda</h1>
+
+        <div class="azienda-info">
+            <div class="info-item">
+                <label>Indirizzo:</label>
+                <span th:text="${azienda.indirizzo}">indirizzo</span>
+            </div>
+            <div class="info-item">
+                <label>Email:</label>
+                <span th:text="${azienda.email}">email</span>
+            </div>
+            <div class="info-item">
+                <label>Telefono:</label>
+                <span th:text="${azienda.telefono}">telefono</span>
+            </div>
+        </div>
+
+        <div class="no-azienda" th:unless="${azienda}">Non esiste</div>
+    </main>
 </body>
+
 </html>

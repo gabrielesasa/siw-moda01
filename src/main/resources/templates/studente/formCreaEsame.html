@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Aggiungi Esame</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/stud.css" />
 </head>
 <body>
     <header>
@@ -10,13 +10,15 @@
     </header>
     <main>
         <form action="/studente/aggiungiEsame" method="post">
+        <div>
             <label for="nomeEsame">Nome Esame:</label>
             <input type="text" id="nomeEsame" name="nomeEsame" required><br><br>
-            
+            </div><div>
             <label for="votoEsame">Voto Esame:</label>
             <input type="number" id="votoEsame" name="votoEsame" required><br><br>
-            
+            </div><div>
             <button type="submit">Aggiungi Esame</button>
+            </div>
         </form>
     </main>
 </body>
