@@ -1,6 +1,10 @@
 package it.uniroma3.siw.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,4 +26,8 @@ public class StudenteService {
 		return studenteRepository.save(studente);
 		
 	}
+	 public List<Studente> getClassifica() {
+	        Pageable topThree = PageRequest.of(0, 3);
+	        return studenteRepository.findClassifica(topThree);
+	    }
 }

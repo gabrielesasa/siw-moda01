@@ -1,5 +1,6 @@
 package it.uniroma3.siw.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -126,6 +128,23 @@ public class StudenteController {
 	        model.addAttribute("studente", studente);
 	        return "/studente/profiloStudente";
 	    }
+	 @GetMapping("/studente/paginaStudenti")
+	    public String paginaStudenti(Model model) {
+		 List<Studente> s=this.studenteService.getClassifica();
+		 Studente s1=s.get(0);
+		 Studente s2=s.get(1);
+		 Studente s3=s.get(2);
+		 System.out.println("primo "+s1.getCognome()+" secpndo "+s2.getCognome()+ " terzo "+s3.getCognome());
+	    model.addAttribute("s1",s1);
+	    model.addAttribute("s2",s2);
+	    model.addAttribute("s3",s3);
+	    return "studente/paginaStudenti";
+	  }
+	 @GetMapping("/studente/studente/{id}")
+		public String getMovie(@PathVariable("id") Long id, Model model) {
+			model.addAttribute("movie", this.studenteService.findById(id));
+			return "studente/studente.html";
+		}
 	}
 	
 

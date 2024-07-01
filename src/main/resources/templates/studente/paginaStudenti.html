@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		SiwFood - Homepage
+	</title>
+	<link rel="stylesheet" href="/css/paginaStudenti.css" />
+	
+</head>
+
+<body>
+	<header>
+	
+	  <div class="header-links">
+            <a href="paginaAziende">Aziende</a>
+            <a href="formRegistrazione">Registrazione</a>
+            <a href="/login">Login</a>
+        </div>
+	
+	</header>
+	
+	<h1>Studenti</h1>
+	 <div class="main-container">
+	 <div class="container">
+        <div class="main-section section1">
+            <a th:href="@{'/studente' + '/' + ${s2.id}}" th:text="${s2.nome} ">Up!
+            <img src="/immagini/Glamour.jpeg" alt="Descrizione della foto">
+        </div>
+        <div class="main-section section2">
+           <a th:href="@{'/studente' + '/' + ${s3.id}}" th:text="${s3.nome} ">Up!
+           <img src="/immagini/Glamour.jpeg" alt="Descrizione della foto">
+        </div>
+        <div class="main-section section3">
+       <a th:href="@{'/sstudente' + '/' + ${s1.id}}" th:text="${s1.nome} ">Up!
+       <img src="/immagini/Glamour.jpeg" alt="Descrizione della foto">
+        </div>
+    </div>
+</div>
+
+    <footer>
+       a
+    </footer>
+	
+		
+		
+		
+	
+	
+</body>
+
+</html>
