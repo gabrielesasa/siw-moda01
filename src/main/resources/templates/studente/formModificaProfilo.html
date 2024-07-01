@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Nuova Azienda
+	</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	
+	
+	<h1>Aggiungi Studente</h1>
+	<form th:action="@{/studente/formModificaStudente}" method="POST" >
+	<input type="hidden" name="id" th:value="${studente.id}" />
+  		
+		
+		<div>
+			<a>Nome:</a> <span><input type="text" name="nuovoNome" placeholder="Nuovo nome" th:value="${studente.nome}" /></span>
+		   
+		    </span>
+		    
+		</div>
+
+		<div>
+			<a>cognome:</a> <span><input type="text" name="nuovocognome" placeholder="Nuovo cognome" th:value="${studente.cognome}" /></span>
+
+		    </span>
+		    
+		    </span>
+		</div>
+
+		
+			<a>Anno:</a> <span><input type="text" name="nuovoAnno" placeholder="Nuovo anno" th:value="${studente.year}" /></span>
+		    
+		    </span>
+			
+		</div>
+		<div>
+			<a>Email:</a> <span><input type="text" name="nuovoEmail" placeholder="Nuovo email" th:value="${studente.email}" /></span>
+		    
+		    </span>
+			
+		</div>
+		<div>
+			<span><button type="submit">Conferma</button></span>
+		</div>
+	</form>
+</body>
+
+</html>

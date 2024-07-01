@@ -7,8 +7,8 @@
 <body>
 	<header> 
 		<div class="header-links">
-            <a href="paginaAziende">Modifica</a>
-            <a href="/azienda/sezioneOfferteLavoro">Sezione offerte di lavoro</a>
+            <a href="/studente/modificaProfilo">Modifica</a>
+            <a href="/studente/aggiungiEsame">Aggiungi esami</a>
             <a href="/login">Login</a>
         </div>
 	
@@ -19,7 +19,9 @@
       <div  th:text="${studente.cognome}">cognome</div>
       <div  th:text="${studente.email}">email</div>
       <div  th:text="${studente.year}">anno</div>
-      
+      	<div th:each="entry : ${studente.esami.entrySet()}">
+            <div th:text="${entry.key}">nome esame</div>
+            <div th:text="${entry.value}">voto esame</div>
   <div th:unless="${studente}">Non esiste</div>
 </body>
 </html>

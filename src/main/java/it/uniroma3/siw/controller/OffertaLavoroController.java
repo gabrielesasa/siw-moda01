@@ -49,8 +49,7 @@ public class OffertaLavoroController {
 		Credentials credenziali = credentialsService.getCredentials(globalController.getUser());
 		User user = credenziali.getUser();
 		Azienda azienda=this.aziendaRepository.findByUser(user);
-		System.out.println(azienda.getOfferte().get(0).getTipologia() + " bbbiaoooooo");
-		System.out.println(azienda.getPubblicate().get(0).getTipologia() + " mmmmmmmm");
+		
 		model.addAttribute("offerteLavoro", this.offertaLavoroRepository.findOfferteLavoro(user.getId()));
 		
     return "azienda/sezioneOfferteLavoro.html";
