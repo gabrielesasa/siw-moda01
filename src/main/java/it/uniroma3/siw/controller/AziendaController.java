@@ -43,6 +43,8 @@ public class AziendaController {
     model.addAttribute("aziende",this.aziendaService.findAll());
     return "paginaAziende.html";
   }
+
+	
 	@GetMapping("/azienda/{id}")
     public String Azienda(@PathVariable("id") Long id,Model model) {
     model.addAttribute("azienda",this.aziendaService.findById(id));

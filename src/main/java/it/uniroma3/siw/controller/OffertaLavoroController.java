@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.model.Azienda;
@@ -50,14 +51,26 @@ public class OffertaLavoroController {
 		User user = credenziali.getUser();
 		Azienda azienda=this.aziendaRepository.findByUser(user);
 		
-		model.addAttribute("offerteLavoro", this.offertaLavoroRepository.findOfferteLavoro(user.getId()));
-		
+		model.addAttribute("offerteLavoro",azienda.getOfferte());
+		model.addAttribute("azienda", azienda);
     return "azienda/sezioneOfferteLavoro.html";
   }
 	@GetMapping("/azienda/aggiungiOffertaLavoro")
     public String aggiungiOffertaLavoro(Model model) {
 		model.addAttribute("offertaLavoro", new OffertaLavoro());
     return "azienda/formOffertaLavoro.html";
+  }
+	@GetMapping("/azienda/modificaOffertaLavoro/{idofferta}/{idazienda}")
+    public String cancellaAziende(@PathVariable("idofferta") Long idofferta,@PathVariable("idazienda") Long idazienda,Model model) {
+	OffertaLavoro o=this.offertaLavoroRepository.findById(idofferta).get();
+	Azienda a=this.aziendaService.findById(idazienda);
+	List<OffertaLavoro> offerte=a.getOfferte();
+	offerte.remove(o);
+	a.setOfferte(offerte);
+	this.offertaLavoroRepository.delete(o);
+	
+    model.addAttribute("aziende",this.aziendaService.findAll());
+    return "paginaAziende.html";
   }
 	@PostMapping("/azienda/formOffertaLavoro")
 	public String formOffertaLavoro(@Valid @ModelAttribute("offertaLavoro") OffertaLavoro offertaLavoro,BindingResult bindingResult, Model model) {
@@ -86,16 +99,27 @@ public class OffertaLavoroController {
 	@GetMapping("/azienda/bacheca")
     public String getBacheca(Model model) {
 		
-		Credentials credenziali = credentialsService.getCredentials(globalController.getUser());
-		User user = credenziali.getUser();
-		
-		Azienda azienda=this.aziendaRepository.findByUser(user);
-		if(azienda.getOfferte().isEmpty())
-			System.out.println("la lista è vuota");
-		else
-		System.out.println(azienda.getOfferte().get(0).getTipologia() + "ciaoooooo");
-		System.out.println(azienda.getPubblicate().get(0));
-		model.addAttribute("pubblicate",azienda.getPubblicate() );
+		model.addAttribute("pubblicate",this.offertaLavoroRepository.findAll() );
     return "azienda/bacheca.html";
   }
+	@GetMapping("/studente/bacheca")
+    public String getBachecaStudente(Model model) {
+		
+		
+	
+		model.addAttribute("pubblicate",this.offertaLavoroRepository.findAll() );
+    return "studente/bacheca.html";
+  }
+	@GetMapping("/azienda/offertaLavoro/{id}")
+    public String aziendaOffertaLavoro(@PathVariable("id") Long id,Model model) {
+		OffertaLavoro offertaLavoro =this.offertaLavoroRepository.findById(id).get();
+		model.addAttribute("offertaLavoro", this.offertaLavoroRepository.findById(id).get());
+    return "azienda/offertaLavoro.html";
+}
+	@GetMapping("/studente/offertaLavoro/{id}")
+    public String studenteOffertaLavoro(@PathVariable("id") Long id,Model model) {
+		model.addAttribute("offertaLavoro", this.offertaLavoroRepository.findById(id).get());
+    return "studente/offertaLavoro.html";
+}
+
 }

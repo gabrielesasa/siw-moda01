@@ -18,8 +18,7 @@ public class OffertaLavoro {
 	private Long stipendio;
 	@ManyToOne
 	private Azienda azienda;
-	@ManyToOne
-	private Azienda aziend2;
+	
 	public Long getId() {
 		return id;
 	}
@@ -27,12 +26,7 @@ public class OffertaLavoro {
 		this.id = id;
 	}
 	
-		public Azienda getAziend2() {
-		return aziend2;
-	}
-	public void setAziend2(Azienda aziend2) {
-		this.aziend2 = aziend2;
-	}
+	
 		public Azienda getAzienda() {
 		return azienda;
 	}

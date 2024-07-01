@@ -51,7 +51,8 @@ public class AuthConfiguration {
             .requestMatchers(HttpMethod.POST, "/registrazione","/login","/formCreaAzienda","/**").permitAll()
 //            .requestMatchers(HttpMethod.GET, "/cuoco/aggiungiRicetta/","/cuoco/aggiungiIngrediente.html/","/admin/aggiornaRicetta/**").hasAnyAuthority(CUOCO_ROLE,ADMIN_ROLE)
          //   .requestMatchers(HttpMethod.POST, "/azienda/nuovaRicetta/**","/cuoco/nuovoIngrediente/","/cuoco/aggiornaRicetta/**","cuoco/nuovoIngrediente","/cuoco/nuovaRicetta").hasAnyAuthority(CUOCO_ROLE,ADMIN_ROLE)
-
+            .requestMatchers(HttpMethod.GET, "/studente/paginaStudenti","/azienda/offertaLavoro/**").hasAnyAuthority(STUDENTE_ROLE,AZIENDA_ROLE)
+            
             .requestMatchers(HttpMethod.GET, "/admin/**").hasAnyAuthority(ADMIN_ROLE)
             .requestMatchers(HttpMethod.POST, "/admin/**").hasAnyAuthority(ADMIN_ROLE)
             // solo gli amministratori possono accedere alle pagine admin

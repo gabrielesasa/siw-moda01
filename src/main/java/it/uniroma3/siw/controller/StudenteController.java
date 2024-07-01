@@ -142,7 +142,7 @@ public class StudenteController {
 	  }
 	 @GetMapping("/studente/studente/{id}")
 		public String getMovie(@PathVariable("id") Long id, Model model) {
-			model.addAttribute("movie", this.studenteService.findById(id));
+			model.addAttribute("studente", this.studenteService.findById(id));
 			return "studente/studente.html";
 		}
 	}

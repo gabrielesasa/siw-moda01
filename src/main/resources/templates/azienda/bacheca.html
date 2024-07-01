@@ -25,7 +25,7 @@
 	<div th:if="${pubblicate==null || pubblicate.isEmpty()}">Non ci sono offerte di lavoro  nel sistema</div>
 	
 		<div th:each="offerta : ${pubblicate}">
-			<a th:href="@{'/offerta' + '/' + ${offerta.id}}" th:text="${offerta.id} ">Up!
+			<a th:href="@{'/azienda/offertaLavoro' + '/' + ${offerta.id}}" th:text="${offerta.id} ">Up!
 				(2000)</a>
 		
 		

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Azienda</title>
+   
+  </head>
+  <body>
+    
+    <div th:if="${offertaLavoro}">
+    <h1 th:text="${offertaLavoro.tipologia}"> tipologia</h1>
+      <h1 th:text="${offertaLavoro.stipendio}"> stipendio</h1>
+        
+    </div>
+    <div th:unless="${offertaLavoro}">Non esiste</div>
+  </body>
+</html>

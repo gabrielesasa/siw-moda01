@@ -19,8 +19,7 @@ public class Azienda {
 	private String indirizzo;
 	private Long telefono;
 	private String email;
-	@OneToMany(mappedBy="aziend2")
-	private List<OffertaLavoro> pubblicate;
+	
 	private String immagine;
 	@OneToOne
 	private User user;
@@ -35,12 +34,7 @@ public class Azienda {
 		this.id = id;
 	}
 	
-	public List<OffertaLavoro> getPubblicate() {
-		return pubblicate;
-	}
-	public void setPubblicate(List<OffertaLavoro> pubblicate) {
-		this.pubblicate = pubblicate;
-	}
+	
 	public List<OffertaLavoro> getOfferte() {
 		return offerte;
 	}
