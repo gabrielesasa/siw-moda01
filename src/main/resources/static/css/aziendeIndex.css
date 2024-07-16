@@ -13,12 +13,12 @@ header {
 }
 
 .header-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 60em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
 .header-links a {
     color: #fff;
     text-decoration: none;
@@ -103,4 +103,15 @@ header {
 
 .image-text {
     font-size: 1.5rem;
+}
+   .immagine {
+    position: absolute;
+    top: -0px;
+    left: -38%;
+    overflow: hidden; /* Assicura che l'immagine non fuoriesca dai bordi dell'header */
+}
+
+.immagine img {
+    max-width: 19%; /* Imposta una larghezza massima, ad esempio 100px */
+    height: auto; /* Lascia che l'altezza si adatti alla larghezza mantenendo le proporzioni */
 }

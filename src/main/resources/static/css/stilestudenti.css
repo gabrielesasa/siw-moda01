@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/immagini/OIP.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+header {
+     background-color:white; /* Sfondo nero traslucido */
+            color: white; /* Testo bianco per contrastare il background nero */
+            height: 1.3em; /* Aumenta l'altezza dell'header */
+            margin-bottom: 0.5em;
+            padding: 1.3em; /* Aumenta il padding per un aspetto più grande */
+            text-align: right; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+            position: relative;
+        }
+        .immagine {
+    position: absolute;
+    top: -8;
+    left: -55%;
+    overflow: hidden; /* Assicura che l'immagine non fuoriesca dai bordi dell'header */
+}
+
+.immagine img {
+    max-width: 18%; /* Imposta una larghezza massima, ad esempio 100px */
+    height: auto; /* Lascia che l'altezza si adatti alla larghezza mantenendo le proporzioni */
+}
+        .header-links {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 77em;
+            font-family: 'Forum', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+   
+
+        header a { 
+            text-decoration: none; 
+            color: rgb(0, 0, 0); /* Cambia il colore del testo dei link per adattarsi al nuovo background */
+            font-size: 3em; /* Puoi modificare la dimensione del font se necessario */
+            font-size: 1.2em; /* Modifica la dimensione del font dei link */
+        }
+        .header-links a:hover {
+    color: red;
+}
+
+.header-search {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 15%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.header-search input[type="text"] {
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.header-search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.header-search button img {
+    width: 20px;
+    height: 20px;
+}
+
+h1 {
+    text-align: left;
+    margin-top: 20%;
+    color: black;
+    font-family: 'Forum', sans-serif; /* Cambia il font dei link */
+    font-size:300%;
+    
+    
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2; /* Aggiunto 0 margin top e 20px margin bottom */
+    max-width: 600px;
+    font-family: 'Forum', sans-serif; /* Cambia il font dei link */
+    font-size:150%;
+}
+
+li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: #400040;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}

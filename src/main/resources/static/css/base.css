@@ -1,4 +1,4 @@
-/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 body {
     font-family: Arial, sans-serif;
@@ -8,6 +8,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: blue;
+  
 }
 
 header {
@@ -88,6 +89,24 @@ header {
 h1{
 	color:white;
 }
+   .immagine {
+    position: absolute;
+    top: -0px;
+    left: -38%;
+    overflow: hidden; /* Assicura che l'immagine non fuoriesca dai bordi dell'header */
+}
 
-	
+.immagine img {
+    max-width: 19%; /* Imposta una larghezza massima, ad esempio 100px */
+    height: auto; /* Lascia che l'altezza si adatti alla larghezza mantenendo le proporzioni */
+}
+p{
+	color:black;
+	 margin-top:-35%; 
+	  margin-left:6%; 
+	 font-family: Raleway, "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+	 font-style: italic;
+	  max-width: 70%;
+	  font-size: 35px;
+}	
 

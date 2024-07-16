@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import it.uniroma3.siw.model.Azienda;
 import it.uniroma3.siw.model.Credentials;
 import it.uniroma3.siw.model.User;
 import it.uniroma3.siw.repository.CredentialsRepository;
 import it.uniroma3.siw.repository.UserRepository;
 import it.uniroma3.siw.service.CredentialsService;
 import it.uniroma3.siw.service.UserService;
+import it.uniroma3.siw.validator.CredentialsValidator;
+import it.uniroma3.siw.validator.UserValidator;
 import jakarta.validation.Valid;
 
 @Controller
@@ -32,7 +33,11 @@ public class AuthenticationController {
 	private UserRepository userRepository;
 	@Autowired 
 	private UserService userService;
-	
+	@Autowired
+	private UserValidator userValidator;
+    
+    @Autowired
+	private CredentialsValidator credentialsValidator;
 	@GetMapping("/formRegistrazione")
 	public String getRegistrazione(Model model) {
 		model.addAttribute("user",new User());
@@ -40,23 +45,21 @@ public class AuthenticationController {
 		return "/formRegistrazione.html";
 		}
 	@PostMapping("/registrazione")
-    public String registerUser(@Valid @ModelAttribute("user") User user,BindingResult bindingResult,
-                 @ModelAttribute("credentials") Credentials credentials,
+    public String registerUser(@Valid @ModelAttribute("user") User user,BindingResult userBindingResult,
+            @Valid @ModelAttribute("credentials") Credentials credentials,BindingResult credentialsBindingResult,
                  Model model) {
-
+		this.userValidator.validate(user, userBindingResult);
+		this.credentialsValidator.validate(credentials, credentialsBindingResult);
+		 if(!userBindingResult.hasErrors() && !credentialsBindingResult.hasErrors()) {
         // se user e credential hanno entrambi contenuti validi, memorizza User e the Credentials nel DB 
             credentials.setUser(user);
             credentialsService.saveCredentials(credentials);
             userService.saveUser(user);
             model.addAttribute("user", user);
             model.addAttribute("credentials", credentials);
-           
-           if(user.isSonoazienda()) {
-            	credentialsService.saveCredentialsAzienda(credentials);
-            	model.addAttribute("azienda", new Azienda());
-            	return "formCreaAzienda.html";
-            }
-            return "index.html";
+            return "index.html";}
+            else
+            	return "formRegistrazione.html";
     }
 	@GetMapping("/login") 
 	public String showLoginForm (Model model) {

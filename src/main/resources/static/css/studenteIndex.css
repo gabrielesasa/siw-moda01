@@ -92,3 +92,14 @@ main {
 .image-text {
     font-size: 1.5rem;
 }
+   .immagine {
+    position: absolute;
+    top: -100px;
+    left: 0%;
+    overflow: hidden; /* Assicura che l'immagine non fuoriesca dai bordi dell'header */
+}
+
+.immagine img {
+    max-width: 19%; /* Imposta una larghezza massima, ad esempio 100px */
+    height: auto; /* Lascia che l'altezza si adatti alla larghezza mantenendo le proporzioni */
+}

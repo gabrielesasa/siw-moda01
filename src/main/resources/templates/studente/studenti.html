@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Menu</title>
+<link rel="stylesheet" href="/css/stilestudenti.css" />
+</head>
+<body>
+<header>
+	<div class="immagine">
+	<a href="/"> <img src="/images/logonero2.png" alt="Logo"></a>
+	</div>
+		<div class="header-links">
+           <a href="/">Home</a>
+           <a href="/logout"> Logout</a>
+        </div>
+	</header>
+	 <form class="header-search" action="/studente/cercaStudente" method="get">
+        <input type="text" name="nomeStudente" placeholder="Cerca studente...">
+        <button type="submit"><img src="/immagini/lente.png" alt="Cerca"></button>
+    </form>
+	<h2>.</h2>
+	<div>.</div>
+	<div th:if="${studenti==null || studenti.isEmpty()}">Non ci sono ricette nel sistema</div>
+	<ul>
+		<li th:each="stud : ${studenti}">
+			<a th:href="@{'/studente/studente' + '/' + ${stud.id}}" th:text="${stud.nome} + ' '+ ${stud.cognome}  ">studente)</a>
+			
+				
+		
+		
+	</ul>
+</body>
+</html>

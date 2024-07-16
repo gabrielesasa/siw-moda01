@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nuova Azienda</title>
+    <link rel="stylesheet" href="/css/az.css">
+</head>
+
+<body>
+    <h1>Aggiungi Azienda</h1>
+    <form th:action="@{/formCreaAzienda}" method="POST" th:object="${azienda}" enctype="multipart/form-data">
+        <div th:if="${#fields.hasGlobalErrors()}">
+            <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+        </div>
+
+        <div class="form-group">
+            <label>Nome:</label>
+            <span><input type="text" th:field="${azienda.nome}"></span>
+            <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Indirizzo:</label>
+            <span><input type="text" th:field="${azienda.indirizzo}"></span>
+            <span th:if="${#fields.hasErrors('indirizzo')}" th:errors="*{indirizzo}"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Telefono:</label>
+            <span><input type="text" th:field="${azienda.telefono}"></span>
+            <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Email:</label>
+            <span><input type="text" th:field="${azienda.email}"></span>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </div>
+
+       
+	<div class="form-group">
+  <span>Importa una tua foto:</span> <input type="file"
+					id="imageFile" name="imageFile" >
+				
+                
+</div>
+        <div class="form-group">
+            <span><button type="submit">Conferma</button></span>
+        </div>
+    </form>
+</body>
+
+</html>

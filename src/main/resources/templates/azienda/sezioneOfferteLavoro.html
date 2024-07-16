@@ -5,35 +5,42 @@
 	<title>
 		SiwFood - Homepage
 	</title>
-	<link rel="stylesheet" href="/css/paginaAziende.css" />
+	<link rel="stylesheet" href="/css/pA.css" />
 	
 </head>
 
 <body>
 	<header>
 	
+	<div class="immagine">
+	<a href="/"> <img src="/immagini/logosiw2.png" alt="Logo"></a>
+	</div>
 	  <div class="header-links">
-            <a href="paginaAziende">Aziende</a>
-            <a href="formRegistrazione">Registrazione</a>
-            <a href="/login">Login</a>
+           <a href="/">Home</a>
+            <a href="/logout">Logout</a>
         </div>
 	
 	</header>
 	
 	<h1>Offerte di Lavoro</h1>
-	 
+	 <main>
+	<div class="azienda-info">
 	<div th:if="${offerteLavoro==null || offerteLavoro.isEmpty()}">Non ci sono offerte di lavoro nel sistema</div>
 	
 		<div th:each="offerta : ${offerteLavoro}">
-			<a th:href="@{'/azienda/offertaLavoro' + '/' + ${offerta.id}}" th:text="${offerta.id} ">Up!
+		<div class="info-item">
+			<a th:href="@{'/azienda/offertaLavoro' + '/' + ${offerta.id}}" th:text="${offerta.titolo} ">Up!
 				(2000)</a>
+				
 		
 		<a th:href="@{'/azienda/modificaOffertaLavoro/' + ${offerta.id}+ '/' + ${azienda.id}}" class="btn btn-primary">Cancella</a>
-			</div>
+			</div></div>
+			<div class="info-item">
 		<a href="/azienda/aggiungiOffertaLavoro">Nuova Offerta</a>
+	</div>
 	
-	
-	
+	</div>
+	</main>
 </body>
 
 </html>

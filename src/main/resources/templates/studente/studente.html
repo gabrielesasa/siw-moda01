@@ -2,24 +2,40 @@
 <html>
 <head>
 <title>Azienda</title>
-<link rel="stylesheet" href="/css/paginaStudenti.css" />
+<link rel="stylesheet" href="/css/stud.css" />
 </head>
 <body>
 	<header> 
+	<div class="immagine">
+	<a href="/"> <img src="/immagini/logosiw2.png" alt="Logo"></a></div>
 		<div class="header-links">
-            <a href="/login">Login</a>
+		    <a href="/">Home</a>
+         
+            <a href="/logout">Logout</a>
         </div>
 	
 	</header>
   
       <h1  th:text="${studente.nome}">nome azienda</h1>
+      <li>
+      <a  th:text="${studente.cognome}">cognome</a>
+      </li><li>
       
-      <div  th:text="${studente.cognome}">cognome</div>
-      <div  th:text="${studente.email}">email</div>
-      <div  th:text="${studente.year}">anno</div>
+      <a  th:text="${studente.matricola}">cognome</a>
+      </li><li>
+      <a  th:text="${studente.email}">email</a>
+      </li><li>
+      <a  th:text="${studente.year}">anno</a>
+      </li><li>
+       <a th:if="${studente.esami==null || studente.esami.isEmpty()}">Non hai conseguito nessun esame</a>
+       
       	<div th:each="entry : ${studente.esami.entrySet()}">
-            <div th:text="${entry.key}">nome esame</div>
-            <div th:text="${entry.value}">voto esame</div>
+      		<a>Esame:</a>
+            <a th:text="${entry.key}">nome esame</a>
+            <a>voto:</a>
+            <a th:text="${entry.value}">voto esame</a>
+         
   <div th:unless="${studente}">Non esiste</div>
+  </li>
 </body>
 </html>

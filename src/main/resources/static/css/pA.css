@@ -10,24 +10,60 @@ body, html {
     color: white;
 }
 
-.header-links {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    padding: 15px 0;
+header {
+     background-color:white; /* Sfondo nero traslucido */
+            color: white; /* Testo bianco per contrastare il background nero */
+            height: 1.3em; /* Aumenta l'altezza dell'header */
+            margin-bottom: 0.5em;
+            padding: 1.3em; /* Aumenta il padding per un aspetto più grande */
+            text-align: right; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+        }
+
+        .header-links {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 60em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+        .header-links2 {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 34em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+         .header-links3 {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 43em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+        .header-links4 {
+            display: flex;
+            gap: 4em; /* Spazio tra i link */
+            margin-left: 35em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+
+        header a { 
+            text-decoration: none; 
+            color: rgb(0, 0, 0); /* Cambia il colore del testo dei link per adattarsi al nuovo background */
+            font-size: 3em; /* Puoi modificare la dimensione del font se necessario */
+            font-size: 1.2em; /* Modifica la dimensione del font dei link */
+        }
+        .header-links a:hover {
+    color: red;
+}
+   .header-links2 a:hover {
+    color:red;
 }
 
-.header-links a {
-    color: white;
-    margin: 0 20px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.header-links a:hover {
-    color: #ddd;
-}
 
 main {
     max-width: 800px;
@@ -63,7 +99,7 @@ h1 {
 
 .info-item label {
     font-weight: bold;
-    color: #555;
+    color: #ffffff;
 }
 
 .no-azienda {
@@ -71,4 +107,25 @@ h1 {
     font-size: 20px;
     color: #d9534f;
     margin-top: 20px;
+}
+a{
+	color: white;
+}
+img{
+	 display: flex;
+    justify-content: space-between;
+     max-width: 60%;
+	margin-left:27%;
+	margin-top:3%;
+}
+   .immagine {
+    position: absolute;
+    top: -23px;
+    left: -38%;
+    overflow: hidden; /* Assicura che l'immagine non fuoriesca dai bordi dell'header */
+}
+
+.immagine img {
+    max-width: 19%; /* Imposta una larghezza massima, ad esempio 100px */
+    height: auto; /* Lascia che l'altezza si adatti alla larghezza mantenendo le proporzioni */
 }

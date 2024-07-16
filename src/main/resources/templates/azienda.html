@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Azienda</title>
-   
-  </head>
-  <body>
+
+<head>
+    <title>Azienda</title>
+    <link rel="stylesheet" href="/css/pA.css">
+</head>
+
+<body>
+    <header>
     
-    <div th:if="${azienda}">
-    <h1 th:text="${azienda.nome}"> Titolo film</h1>
-       
-        
-    </div>
-    <div th:unless="${azienda}">Non esiste</div>
-  </body>
+	<div class="immagine">
+	<a href="/"> <img src="/immagini/logosiw2.png" alt="Logo"></a>
+	</div>
+        <div class="header-links">
+        <a href="/">Home</a>
+            
+            <a href="/login">Login</a>
+        </div>
+    </header>
+
+    <main>
+        <h1 th:text="${azienda.nome}">nome azienda</h1>
+
+        <div class="azienda-info">
+            <div class="info-item">
+                <label>Indirizzo:
+                <span th:text="${azienda.indirizzo}">indirizzo</span></label>
+            </div>
+            <div class="info-item">
+                <label>Email:
+                <span th:text="${azienda.email}">email</span></label>
+            </div>
+            <div class="info-item">
+                <label>Telefono:
+                <span th:text="${azienda.telefono}">telefono</span></label>
+            </div>
+        </div>
+  
+               
+                <img th:src="'data:image/jpeg;base64,' + ${azienda.immagine}" alt="Immagine Azienda">
+            
+     
+        <div class="no-azienda" th:unless="${azienda}">Non esiste</div>
+    </main>
+</body>
+
 </html>

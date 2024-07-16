@@ -14,15 +14,27 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapKeyColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Studente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@NotBlank
 	private String nome;
+	@NotBlank
 	private String cognome;
+	@NotNull
+	private Integer matricola;
+	@Email
 	private String email;
+	@Min(1980)
+	@Max(2004)
 	private Integer year;
 	 @ElementCollection
 	    @CollectionTable(name = "esami", joinColumns = @JoinColumn(name = "studente_id"))
@@ -38,6 +50,12 @@ public class Studente {
 		this.id = id;
 	}
 	
+	public Integer getMatricola() {
+		return matricola;
+	}
+	public void setMatricola(Integer matricola) {
+		this.matricola = matricola;
+	}
 	public Map<String, Integer> getEsami() {
 		return esami;
 	}

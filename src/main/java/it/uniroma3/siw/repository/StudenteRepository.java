@@ -13,9 +13,12 @@ import it.uniroma3.siw.model.User;
 public interface StudenteRepository extends CrudRepository<Studente, Long> {
 	public List<Studente> findByYear(Integer year);
 	public Studente findByUser(User utente);
-	//public boolean existsByNomeAndYear(String nome,Integer year);
+	public boolean existsByNomeAndCognome(String nome,String cognome);
 	@Query(value = "SELECT s.* FROM Studente s JOIN esami e ON s.id = e.studente_id GROUP BY s.id ORDER BY SUM(e.voto_esame) DESC", nativeQuery = true)
 	    List<Studente> findClassifica(Pageable pageable);
+
+	public Studente findByNomeEndingWith(String nome);
+	public Studente findByNome(String nome);
 	
 }
 

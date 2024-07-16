@@ -1,6 +1,5 @@
 package it.uniroma3.siw.model;
 
-import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
@@ -14,8 +13,11 @@ public class OffertaLavoro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private String titolo;
 	private String tipologia;
 	private Long stipendio;
+	private String requisiti;
+
 	@ManyToOne
 	private Azienda azienda;
 	
@@ -44,6 +46,19 @@ public class OffertaLavoro {
 	}
 	public void setStipendio(Long stipendio) {
 		this.stipendio = stipendio;
+	}
+	
+	public String getTitolo() {
+		return titolo;
+	}
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
+	public String getRequisiti() {
+		return requisiti;
+	}
+	public void setRequisiti(String requisiti) {
+		this.requisiti = requisiti;
 	}
 	@Override
 	public int hashCode() {

@@ -3,35 +3,34 @@
 
 <head>
     <title>SiwFood - Homepage</title>
-    <link rel="stylesheet" href="/css/studenteIndex.css">
+    <link rel="stylesheet" href="/css/classificas.css">
 </head>
 
 <body>
     <header>
+    <div class="immagine">
+	<a href="/"> <img src="/immagini/logosiw2.png" alt="Logo"></a></div>
         <div class="header-links">
-            <a href="paginaAziende">Aziende</a>
-            <a href="formRegistrazione">Registrazione</a>
-            <a href="/login">Login</a>
+            <a href="/">Home</a>
+            <a href="/studente/studenti">Cerca Studente</a>
+            <a href="/logout">Logout</a>
         </div>
     </header>
 
-    <h1>Studenti</h1>
+     <main>
+        <div id="quadrant1" class="quadrant">
+            <a th:href="@{'/studente/studente' + '/' + ${s2.id}}" th:text="${s2.matricola}" class="student-name">Nome 1</a>
+            
+        </div>
+        <div id="quadrant2" class="quadrant">
+            <a th:href="@{'/studente/studente' + '/' + ${s3.id}}" th:text="${s3.matricola}" class="student-name">Nome 2</a>
+        </div>
+        <div id="quadrant3" class="quadrant">
+            <a th:href="@{'/studente/studente' + '/' + ${s1.id}}" th:text="${s1.matricola}" class="student-name">Nome 3</a>
+        </div>
+    </main>
 
-    <div class="section" id="section1">
-        <a th:href="@{'/studente/studente' + '/' + ${s2.id}}" th:text="${s2.nome} " class="student-name">Nome 1</a>
-    </div>
-
-    <div class="section" id="section2">
-        <a th:href="@{'/studente/studente' + '/' + ${s3.id}}" th:text="${s3.nome} " class="student-name">Nome 2</a>
-    </div>
-
-    <div class="section" id="section3">
-        <a th:href="@{'/studente/studente' + '/' + ${s1.id}}" th:text="${s1.nome} " class="student-name">Nome 3</a>
-    </div>
-
-    <footer>
-        Footer
-    </footer>
+   
 </body>
 
 </html>

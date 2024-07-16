@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Azienda</title>
-   
-  </head>
-  <body>
+
+<head>
+    <title>Azienda</title>
+    <link rel="stylesheet" href="/css/pA.css">
+</head>
+
+<body>
+    <header>
     
-    <div th:if="${offertaLavoro}">
-    <h1 th:text="${offertaLavoro.tipologia}"> tipologia</h1>
-      <h1 th:text="${offertaLavoro.stipendio}"> stipendio</h1>
-<h1 th:text="${offertaLavoro.azienda.none}"> azienda</h1>
-        
-    </div>
-    <div th:unless="${offertaLavoro}">Non esiste</div>
-  </body>
+	<div class="immagine">
+	<a href="/"> <img src="/immagini/logosiw2.png" alt="Logo"></a>
+	</div>
+        <div class="header-links">
+            <a href="/">Home</a>
+           
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+
+    <main>
+        <h1 th:text="${offertaLavoro.titolo}">nome azienda</h1>
+
+        <div class="azienda-info">
+            <div class="info-item">
+                <label>requisiti:
+                <span th:text="${offertaLavoro.requisiti}">indirizzo</span></label>
+            </div>
+            <div class="info-item">
+                <label>Tipologia:
+                <span th:text="${offertaLavoro.tipologia}">email</span></label>
+            </div>
+            <div class="info-item">
+                <label>Stipendio:
+                <span th:text="${offertaLavoro.stipendio}">telefono</span></label>
+            </div>
+            <div class="info-item">
+                <label>Azienda:
+                <span th:text="${offertaLavoro.azienda.nome}">telefono</span></label>
+            </div>
+        </div>
+
+        
+    </main>
+</body>
+
 </html>

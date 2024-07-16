@@ -1,49 +1,86 @@
-/* paginaStudenti.css */
-
-/* Aggiunge un'immagine di sfondo */
 body {
-    background-image: url('/immagini/profilos.jpeg');
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/immagini/p.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-    color: #333;
+    
 }
 
-/* Stili per l'header e i link */
 header {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     background-color:white; /* Sfondo nero traslucido */
+            color: white; /* Testo bianco per contrastare il background nero */
+            height: 1.3em; /* Aumenta l'altezza dell'header */
+            margin-bottom: 0.5em;
+            padding: 1.3em; /* Aumenta il padding per un aspetto più grande */
+            text-align: right; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+            position: relative;
+        }
+        .immagine {
+    position: absolute;
+    top: -8;
+    left: -38%;
+    overflow: hidden; /* Assicura che l'immagine non fuoriesca dai bordi dell'header */
 }
 
-.header-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #0066cc;
-    font-weight: bold;
+.immagine img {
+    max-width: 18%; /* Imposta una larghezza massima, ad esempio 100px */
+    height: auto; /* Lascia che l'altezza si adatti alla larghezza mantenendo le proporzioni */
+}
+        .header-links {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 60%;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+   
+
+        header a { 
+            text-decoration: none; 
+            color: rgb(0, 0, 0); /* Cambia il colore del testo dei link per adattarsi al nuovo background */
+            font-size: 3em; /* Puoi modificare la dimensione del font se necessario */
+            font-size: 1.2em; /* Modifica la dimensione del font dei link */
+        }
+        .header-links a:hover {
+    color: red;
 }
 
-.header-links a:hover {
-    text-decoration: underline;
-    color: #004080;
-}
 
-/* Stili per i contenuti */
 h1 {
-    text-align: center;
-    color: #004080;
+    text-align: left;
     margin-top: 20px;
+    margin-left: 50%;
+    color: #ffffff;
 }
 
-div {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 5px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2; /* Aggiunto 0 margin top e 20px margin bottom */
     max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-left: 50%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+    font-size:150%
+}
+
+a:hover {
+    color: #0056b3;
+}

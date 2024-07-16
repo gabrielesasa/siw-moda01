@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Nuova Azienda
+	</title>
+	 <link rel="stylesheet" href="/css/pA.css">
+</head>
+
+<body>
+	
+	<header>
+	<div class="immagine">
+	<a href="/"> <img src="immagini/logosiw2.png" alt="Logo"></a>
+	</div>
+	
+		<div class="header-links">
+		    <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </div>
+	
+	</header>
+	<h1>Modifica Profilo</h1>
+	<main>
+	<div class="azienda-info">
+	<form th:action="@{/azienda/formModificaAzienda}" method="POST" >
+	<input type="hidden" name="id" th:value="${azienda.id}" />
+  		
+		<div class="info-item">
+		<label>
+			 <span><a>Nome:</a> <span><input type="text" name="nuovoNome" placeholder="Nuovo nome" th:value="${azienda.nome}" /></span>
+		   
+		   
+		    
+		</label>
+</div><div class="info-item">
+		<label>
+			<a>indirizzo:</a> <span><input type="text" name="nuovoindirizzo" placeholder="Nuovo indirizzo" th:value="${azienda.indirizzo}" /></span>
+
+		    </span>
+		    
+		    </span>
+		</label></div>
+<div class="info-item">
+		<label>
+			<a>telefono:</a> <span><input type="text" name="nuovotelefono" placeholder="Nuovo telefono" th:value="${azienda.telefono}" /></span>
+		    
+		    </label>
+			</div>
+		</label>
+		<div class="info-item"><label>
+			<a>Email:</a> <span><input type="text" name="nuovoEmail" placeholder="Nuovo email" th:value="${azienda.email}" /></span>
+		    
+		    
+			
+		</label></div><div class="info-item">
+		<label>
+			<span><button type="submit">Conferma</button></span>
+		</label></div>
+	</form>
+	</div>
+	</main>
+</body>
+
+</html>

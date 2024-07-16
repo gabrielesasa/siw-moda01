@@ -8,10 +8,15 @@
 
 <body>
     <header>
+    
+	<div class="immagine">
+	<a href="/"> <img src="/immagini/logosiw2.png" alt="Logo"></a>
+	</div>
         <div class="header-links">
-            <a href="paginaAziende">Modifica</a>
+            <a href="/azienda/modificaAzienda">Modifica</a>
             <a href="/azienda/sezioneOfferteLavoro">Sezione offerte di lavoro</a>
             <a href="/login">Login</a>
+             
         </div>
     </header>
 
@@ -20,16 +25,16 @@
 
         <div class="azienda-info">
             <div class="info-item">
-                <label>Indirizzo:</label>
-                <span th:text="${azienda.indirizzo}">indirizzo</span>
+                <label>Indirizzo:
+                <span th:text="${azienda.indirizzo}">indirizzo</span></label>
             </div>
             <div class="info-item">
-                <label>Email:</label>
-                <span th:text="${azienda.email}">email</span>
+                <label>Email:
+                <span th:text="${azienda.email}">email</span></label>
             </div>
             <div class="info-item">
-                <label>Telefono:</label>
-                <span th:text="${azienda.telefono}">telefono</span>
+                <label>Telefono:
+                <span th:text="${azienda.telefono}">telefono</span></label>
             </div>
         </div>
 

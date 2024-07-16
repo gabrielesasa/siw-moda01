@@ -1,8 +1,6 @@
 
 package it.uniroma3.siw.repository;
 
-import java.util.List;
-
 import org.springframework.data.repository.CrudRepository;
 
 import it.uniroma3.siw.model.Azienda;
@@ -13,7 +11,7 @@ public interface AziendaRepository extends CrudRepository<Azienda, Long> {
 	public Azienda findByUser(User utente);
 	//public List<Azienda> findByYear(Integer year);
 	
-	//public boolean existsByTitleAndYear(String title,Integer year);
+	public boolean existsByNome(String nome);
 	
 }
 

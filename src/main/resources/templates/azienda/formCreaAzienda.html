@@ -7,8 +7,12 @@
 </head>
 
 <body>
+<header>
+	<div class="immagine">
+	<a href="/"> <img src="immagini/logosiw2.png" alt="Logo"></a>
+	</div></header>
     <h1>Aggiungi Azienda</h1>
-    <form th:action="@{/azienda/formCreaAzienda}" method="POST" th:object="${azienda}">
+    <form th:action="@{/azienda/formCreaAzienda}" method="POST" th:object="${azienda}" enctype="multipart/form-data">
         <div th:if="${#fields.hasGlobalErrors()}">
             <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
         </div>
@@ -37,12 +41,13 @@
             <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
         </div>
 
-        <div class="form-group">
-            <label>Immagine:</label>
-            <span><input type="text" th:field="${azienda.immagine}"></span>
-            <span th:if="${#fields.hasErrors('immagine')}" th:errors="*{immagine}"></span>
-        </div>
-
+       
+	<div class="form-group">
+  <span>Importa una tua foto:</span> <input type="file"
+					id="imageFile" name="imageFile" >
+				
+                
+</div>
         <div class="form-group">
             <span><button type="submit">Conferma</button></span>
         </div>

@@ -1,0 +1,163 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #e3e3e3;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+header {
+     background-color:white; /* Sfondo nero traslucido */
+            color: white; /* Testo bianco per contrastare il background nero */
+            height: 1.3em; /* Aumenta l'altezza dell'header */
+            margin-bottom: 0.5em;
+            padding: 1.3em; /* Aumenta il padding per un aspetto più grande */
+            text-align: right; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+        }
+
+        .header-links {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 60em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+        .header-links2 {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 34em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+         .header-links3 {
+            display: flex;
+            gap: 6em; /* Spazio tra i link */
+            margin-left: 43em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+        .header-links4 {
+            display: flex;
+            gap: 4em; /* Spazio tra i link */
+            margin-left: 35em;
+            font-family: 'Dmsans', sans-serif; /* Cambia il font dei link */
+            font-style: italic;
+        }
+
+        header a { 
+            text-decoration: none; 
+            color: rgb(0, 0, 0); /* Cambia il colore del testo dei link per adattarsi al nuovo background */
+            font-size: 3em; /* Puoi modificare la dimensione del font se necessario */
+            font-size: 1.2em; /* Modifica la dimensione del font dei link */
+        }
+
+main {
+    max-width: 1200px; /* Aumentato per fare spazio alla sidebar */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333; /* Colore del testo principale */
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 30%; /* Larghezza della colonna di sinistra */
+    padding: 20px;
+    background-color: #c4ffc4;
+    border-right: 1px solid #ddd;
+}
+
+.content {
+    width: 70%; /* Larghezza della colonna di destra */
+    padding: 20px;
+}
+
+.azienda-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.info-item a:hover {
+    background-color: #f0f0f0;
+}
+
+.info-item .azienda-nome {
+    font-size: 14px;
+    color: #666;
+}
+
+.no-azienda {
+    text-align: center;
+    font-size: 20px;
+    color: #d9534f;
+    margin-top: 20px;
+}
+
+.count-offerte-azienda {
+    margin: 20px 0;
+}
+
+.count-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.azienda-nome {
+    font-weight: bold;
+}
+
+.offerte-count {
+    margin-left: 10px;
+}
+   .immagine {
+    position: absolute;
+    top: -0px;
+    left: -38%;
+    overflow: hidden; /* Assicura che l'immagine non fuoriesca dai bordi dell'header */
+}
+
+.immagine img {
+    max-width: 19%; /* Imposta una larghezza massima, ad esempio 100px */
+    height: auto; /* Lascia che l'altezza si adatti alla larghezza mantenendo le proporzioni */
+}

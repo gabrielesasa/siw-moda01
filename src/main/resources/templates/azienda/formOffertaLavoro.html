@@ -5,34 +5,51 @@
 	<title>
 		Nuova Azienda
 	</title>
-	<link rel="stylesheet" href="/css/stile.css" />
+	<link rel="stylesheet" href="/css/pA.css" />
 </head>
 
 <body>
-	
+	<header>
+	<div class="immagine">
+	<a href="/"> <img src="immagini/logosiw2.png" alt="Logo"></a>
+	</div>
+	</header>
 	
 	<h1>Aggiungi Offerta di Lavoro</h1>
+	<main>
+	<div class="azienda-info">
 	<form th:action="@{/azienda/formOffertaLavoro}" method="POST" >
 	
-  		
-		
-		<div>
-			<label>Tipologia:</label> 
-			<span><input type="text" th:field="${offertaLavoro.tipologia}" /></span>
+  		<div class="info-item">
+			<label>titolo:<input type="text" th:field="${offertaLavoro.titolo}" /></label>
 		    
-		    </span>
+		  
+		</div>
+		<div class="info-item">
+			<label>requisiti:<input type="text" th:field="${offertaLavoro.requisiti}" /></label>
+		    
+		  
+		</div>
+		
+		<div class="info-item">
+			<label>Tipologia:
+			<input type="text" th:field="${offertaLavoro.tipologia}" /></label>
+		    
+		 
 		</div>
 
-		<div>
-			<label>stipendio:</label> <span><input type="text" th:field="${offertaLavoro.stipendio}" /></span>
+		<div class="info-item">
+			<label>stipendio:<input type="text" th:field="${offertaLavoro.stipendio}" /></label>
 		    
-		    </span>
+		  
 		</div>
 
-		
+		<div class="info-item">
 			<span><button type="submit">Conferma</button></span>
 		</div>
 	</form>
+	</div>
+	</main>
 </body>
 
 </html>

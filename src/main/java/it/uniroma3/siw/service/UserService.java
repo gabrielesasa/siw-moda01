@@ -47,6 +47,11 @@ public class UserService {
      * This method retrieves all Users from the DB.
      * @return a List with all the retrieved Users
      */
+   @Transactional
+	public boolean existByEmail(String email) {
+
+		return this.userRepository.existsByEmail(email);
+	}
     
 }
 

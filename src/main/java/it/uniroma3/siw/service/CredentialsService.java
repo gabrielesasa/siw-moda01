@@ -53,4 +53,9 @@ public class CredentialsService {
         credentials.setPassword(this.passwordEncoder.encode(credentials.getPassword()));
       return credentialsRepository.save(credentials);
     }
+    @Transactional
+	public boolean existByUsername(String username) {
+		
+		return this.credentialsRepository.existsByUsername(username);
+	}
 }

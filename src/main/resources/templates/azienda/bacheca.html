@@ -2,38 +2,49 @@
 <html>
 
 <head>
-	<title>
-		SiwFood - Homepage
-	</title>
-	<link rel="stylesheet" href="/css/paginaAziende.css" />
-	
+    <title>SiwFood - Homepage</title>
+    <link rel="stylesheet" href="/css/bacheca.css" />
 </head>
 
 <body>
-	<header>
-	
-	  <div class="header-links">
-            <a href="paginaAziende">Aziende</a>
-            <a href="formRegistrazione">Registrazione</a>
-            <a href="/login">Login</a>
+    <header>
+	<div class="immagine">
+	<a href="/"> <img src="/immagini/logosiw2.png" alt="Logo"></a>
+	</div>
+        <div class="header-links">
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
         </div>
-	
-	</header>
-	
-	<h1>Offerte di Lavoro</h1>
-	 
-	<div th:if="${pubblicate==null || pubblicate.isEmpty()}">Non ci sono offerte di lavoro  nel sistema</div>
-	
-		<div th:each="offerta : ${pubblicate}">
-			<a th:href="@{'/azienda/offertaLavoro' + '/' + ${offerta.id}}" th:text="${offerta.id} ">Up!
-				(2000)</a>
-		
-		
-			</div>
-		<a href="/azienda/aggiungiOffertaLavoro">Nuova Offerta</a>
-	
-	
-	
+    </header>
+
+    <main>
+        <h1>Offerte di Lavoro</h1>
+        <div class="container">
+            <div class="sidebar">
+                <h2>Numero di offerte per azienda</h2>
+                <div class="count-offerte-azienda">
+                    <div th:each="count : ${countOfferteAzienda}">
+                        <div class="count-item">
+                            <span class="azienda-nome" th:text="${count[0]}">Nome Azienda</span>
+                            <span class="offerte-count" th:text="${count[1]}">Numero di Offerte</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="azienda-info">
+                    <div th:if="${pubblicate == null || pubblicate.isEmpty()}">Non ci sono offerte di lavoro nel sistema</div>
+                    <div th:each="offerta : ${pubblicate}">
+                        <div class="info-item">
+                            <a th:href="@{'/azienda/offertaLavoro' + '/' + ${offerta.id}}" th:text="${offerta.titolo}">Up! (2000)</a>
+                            <span class="azienda-nome" th:text="${offerta.azienda.nome}">Nome Azienda</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>

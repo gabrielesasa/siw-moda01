@@ -9,37 +9,49 @@
 </head>
 
 <body>
-	
+	  <header>
+    <div class="immagine">
+	<a href="/"> <img src="/immagini/logosiw2.png" alt="Logo"></a></div>
+        <div class="header-links">
+		    <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
 	
 	<h1>Aggiungi Studente</h1>
-	<form th:action="@{/studente/formCreaStudente}" method="POST" >
 	
+	<form th:action="@{/studente/formCreaStudente}" method="POST" >
+	<li>
   		
 		
-		<div>
+	
 			<label>Nome:</label> 
 			<span><input type="text" th:field="${studente.nome}" /></span>
+			
+		    </li><li>
 		    
-		    </span>
-		</div>
+		
 
-		<div>
+		
 			<label>cognome:</label> <span><input type="text" th:field="${studente.cognome}" /></span>
-		    
-		    </span>
-		</div>
+		    </li><li>
+		  
+		
 
 		
 			<label>Email:</label> <span><input type="text" th:field="${studente.email}" /></span>
-			
-		</div>
-		<div>
+			</li><li>
+		
+		
 			<label>anno:</label> <span><input type="text" th:field="${studente.year}" /></span>
+			</li><li>
 			
-		</div>
-		<div>
+			<label>matricola:</label> <span><input type="text" th:field="${studente.matricola}" /></span>
+			</li><li>
+		
+		
 			<span><button type="submit">Conferma</button></span>
-		</div>
+		</li>
 	</form>
 </body>
 
