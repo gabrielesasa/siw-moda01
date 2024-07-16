@@ -40,9 +40,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>it.uniroma3.siw</groupId>
-			<artifactId>siw-spring-03</artifactId>
+			<artifactId>siw-food-1</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
